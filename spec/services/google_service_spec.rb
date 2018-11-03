@@ -7,7 +7,7 @@ describe GoogleService do
 
   context 'instance methods' do
     context '#location_data' do
-      it 'returns a hash' do 
+      it 'returns a hash' do
         VCR.use_cassette('location_data') do
           service = GoogleService.new('denver,co')
           
