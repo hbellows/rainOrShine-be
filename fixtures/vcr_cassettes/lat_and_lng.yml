@@ -22,9 +22,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sat, 03 Nov 2018 22:14:52 GMT
+      - Sat, 03 Nov 2018 22:14:53 GMT
       Expires:
-      - Sun, 04 Nov 2018 22:14:52 GMT
+      - Sun, 04 Nov 2018 22:14:53 GMT
       Cache-Control:
       - public, max-age=86400
       Vary:
