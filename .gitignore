@@ -27,3 +27,5 @@
 
 # Ignore SimpleCov coverage
 /coverage
+
+/notes
