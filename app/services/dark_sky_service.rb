@@ -10,7 +10,7 @@ class DarkSkyService
         faraday.adapter Faraday.default_adapter
       end
     end
-    
+
     def get_json(url)
       JSON.parse(conn.get(url).body, symbolize_names: true)
     end
