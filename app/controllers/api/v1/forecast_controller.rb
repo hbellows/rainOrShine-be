@@ -10,7 +10,7 @@ class Api::V1::ForecastController < ApiController
   end
 
   private
-  
+
     def google_service
       GoogleService.new
     end
