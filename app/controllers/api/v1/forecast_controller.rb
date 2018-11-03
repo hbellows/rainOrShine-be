@@ -6,6 +6,4 @@ class Api::V1::ForecastController < ApiController
     # thing_to_render_in_json = thing.method_name
     # render json:  thing_to_render_in_json
   end
-  
-  
 end
