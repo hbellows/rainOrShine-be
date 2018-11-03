@@ -72,11 +72,11 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-# VCR.configure do |config|
-#   config.cassette_library_dir = "fixtures/vcr_cassettes"
-#   config.hook_into :webmock
-#   config.filter_sensitive_data('<YOUR GOOGLE API KEY HERE>') { ENV['google_api_key'] }
-# end
+VCR.configure do |config|
+  config.cassette_library_dir = "fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.filter_sensitive_data('<YOUR GOOGLE API KEY HERE>') { ENV['google_api_key'] }
+end
 
 DatabaseCleaner.strategy = :truncation
 RSpec.configure do |config|

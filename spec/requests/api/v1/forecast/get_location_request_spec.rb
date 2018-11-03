@@ -1,12 +1,13 @@
-# frozen_string_literal: true.
 require 'rails_helper'
 
 xdescribe 'GET forecast' do
-  xit 'can get location' do
+  it 'can get forecast' do
     # GET /api/v1/forecast?location=denver,co
     location = 'denver,co'
+    VCR.use_cassette('get_forecast') do
+     get "/api/v1/forecast?location=#{location}"
+    end
 
-    get "/api/v1/forecast?location=#{location}"
 
     expect(response.status).to eq(200)
 
