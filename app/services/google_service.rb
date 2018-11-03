@@ -8,7 +8,7 @@ class GoogleService
   end
 
   def coordinates
-    location_data
+    location_data[:results][0][:geometry][:location]
   end
   
   private
