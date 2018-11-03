@@ -1,15 +1,13 @@
 class DarkSkyService
-  
+
   def current_forecast(lat, lng, lang = en, exclude = minutely)
-    get_json("/ENV['google_api_key']/#{lat},#{lng}?#{lang}&#{exclude}")
+    get_json("/ENV['dark_sky_api_key']/#{lat},#{lng}?#{lang}&#{exclude}")
   end
 
   private
 
     def conn
       Faraday.new(url: 'https://api.darksky.net/forecast') do |faraday|
-        faraday.headers['Accept'] = 'application/json'
-        faraday.params['key'] = 
         faraday.adapter Faraday.default_adapter
       end
     end
