@@ -1,5 +1,5 @@
 class DarkSkyService
-
+  
   def current_forecast(lat, lng, lang = en, exclude = minutely)
     get_json("/ENV['google_api_key']/#{lat},#{lng}?#{lang}&#{exclude}")
   end
@@ -17,5 +17,4 @@ class DarkSkyService
     def get_json(url)
       JSON.parse(conn.get(url).body, symbolize_names: true)
     end
-
 end
