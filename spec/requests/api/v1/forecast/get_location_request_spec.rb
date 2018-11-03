@@ -12,5 +12,4 @@ xdescribe 'GET forecast' do
 
     returned_location = JSON.parse(response.body, symbolize_names: true)
   end
-
 end
