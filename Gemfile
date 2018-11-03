@@ -28,6 +28,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'vcr'
   gem 'webmock'
+  gem 'fuubar'
+  gem 'simplecov'
 end
 
 group :development do
