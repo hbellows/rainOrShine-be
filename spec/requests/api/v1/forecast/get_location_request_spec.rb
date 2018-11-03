@@ -2,7 +2,7 @@
 require 'rails_helper'
 
 xdescribe 'GET forecast' do
-  it 'can get location' do
+  xit 'can get location' do
     # GET /api/v1/forecast?location=denver,co
     location = 'denver,co'
 
