@@ -9,7 +9,8 @@ class Api::V1::ForecastController < ApiController
     render json: weather_data
   end
 
-  private 
+  private
+  
     def google_service
       GoogleService.new
     end
