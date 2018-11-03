@@ -11,7 +11,6 @@ class GoogleService
     location_data
   end
   
-
   private
   
   def conn
