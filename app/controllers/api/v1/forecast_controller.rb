@@ -1,5 +1,4 @@
 class Api::V1::ForecastController < ApiController
-
   def show
     @coordinates = GoogleService.new(params[:location])
     # thing = ExternalApiService.new(params)
