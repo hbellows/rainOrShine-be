@@ -20,7 +20,7 @@ describe GoogleService do
         end
       end
     end
-    
+
     context '#latitude and #longitude' do
       it 'returns latitude and longitude' do
         VCR.use_cassette('lat_and_lng') do
