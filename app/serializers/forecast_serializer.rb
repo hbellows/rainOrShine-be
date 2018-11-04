@@ -1,6 +1,6 @@
-class ForecastSerializer 
+class ForecastSerializer
   include FastJsonapi::ObjectSerializer
-  
+
   set_type :forecast
   set_id :location
 
