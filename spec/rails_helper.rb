@@ -63,6 +63,12 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   config.include FactoryBot::Syntax::Methods
+
+  config.fuubar_progress_bar_options = { 
+    :format => "%a %b\u{15E7}%i %p%% %t",
+    :progress_mark  => ' ',
+    :remainder_mark => "\u{FF65}"
+  }
 end
 
 Shoulda::Matchers.configure do |config|
