@@ -3,6 +3,10 @@ class Forecast
     @location = location
   end
 
+  def location
+    @location
+  end
+
   def current_forecast
     find_weather[:currently]
   end
