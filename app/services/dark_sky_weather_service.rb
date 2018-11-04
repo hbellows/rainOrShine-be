@@ -1,12 +1,13 @@
 class DarkSkyWeatherService
-  def current_forecast(lat, lng, lang = en, exclude = minutely)
-    get_json("/ENV['dark_sky_api_key']/#{lat},#{lng}?#{lang}&#{exclude}")
+
+  def forecast_data(lat, lng, lang = 'en', exclude = 'minutely')
+    get_json("/forecast/#{ENV['dark_sky_api_key']}/#{lat},#{lng}?lang=#{lang}&exclude=#{exclude}")
   end
 
   private
 
     def conn
-      Faraday.new(url: 'https://api.darksky.net/forecast') do |faraday|
+      Faraday.new(url: 'https://api.darksky.net') do |faraday|
         faraday.adapter Faraday.default_adapter
       end
     end

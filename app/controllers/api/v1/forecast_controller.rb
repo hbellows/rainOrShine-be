@@ -1,16 +1,9 @@
 class Api::V1::ForecastController < ApiController
   def show
-     render json: forecast
+    binding.pry
+    forecast = Forecast.new(params[:location])
+    #  render json: ForecastSerializer.new(forecast).serialized_json
   end
-
-  private 
-    def find_forecast 
-      Forecast.new(params[:location])
-    end
-
-    def forecast
-      ForecastSerializer.new(find_forecast).serialized_json
-    end
 end
 
 

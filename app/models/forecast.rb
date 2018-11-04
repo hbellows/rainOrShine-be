@@ -5,16 +5,24 @@ class Forecast
 
   private
 
+  def weather_service
+    @weather_service ||= DarkSkyWeatherService.new
+  end
+
+  def find_weather
+    weather_service.forecast_data(latitude, longitude)
+  end
+
   def geocoder_service
     @geocoder_service ||= GoogleGeocoderService.new
   end
 
-  def get_location
+  def find_location
     geocoder_service.location_data(@location)
   end
 
   def coordinates
-    get_location[:results][0][:geometry][:location]
+    find_location[:results][0][:geometry][:location]
   end
 
   def latitude
