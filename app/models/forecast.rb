@@ -1,10 +1,8 @@
 class Forecast
+  attr_reader :location
+
   def initialize(location)
     @location = location
-  end
-
-  def location
-    @location
   end
 
   def current_forecast
