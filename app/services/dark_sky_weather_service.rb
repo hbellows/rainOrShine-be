@@ -1,4 +1,4 @@
-class DarkSkyService
+class DarkSkyWeatherService
   def current_forecast(lat, lng, lang = en, exclude = minutely)
     get_json("/ENV['dark_sky_api_key']/#{lat},#{lng}?#{lang}&#{exclude}")
   end
