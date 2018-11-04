@@ -1,4 +1,5 @@
 class GoogleGeocoderService
+
   def location_data(location)
     get_json("/maps/api/geocode/json?address=#{location}")
   end
