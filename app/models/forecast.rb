@@ -28,7 +28,7 @@ class Forecast
   private
 
   def image_service
-    @image_service ||= FlickrService.new
+    @image_service ||= FlickrImageService.new
   end
 
   def find_images
