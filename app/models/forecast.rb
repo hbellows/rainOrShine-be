@@ -27,6 +27,14 @@ class Forecast
 
   private
 
+  def image_service
+    @image_service ||= FlickrService.new
+  end
+
+  def find_images
+    image_service.image_data(latitude, longitude)
+  end
+
   def weather_service
     @weather_service ||= DarkSkyWeatherService.new
   end
