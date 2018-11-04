@@ -6,11 +6,11 @@ describe 'GET forecast' do
     VCR.use_cassette('forecast_get_request') do
       user_location = 'denver,co'
       get "/api/v1/forecast?location=#{user_location}"
-      
+
       expect(response.status).to eq(200)
-      
+
       returned_forecast = JSON.parse(response.body, symbolize_names: true)
-      
+
       expect(returned_forecast).to be_a(Hash)
       expect(returned_forecast).to have_key(:data)
       expect(returned_forecast[:data]).to have_key(:id)
