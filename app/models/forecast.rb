@@ -6,7 +6,7 @@ class Forecast
   private
 
   def geocoder_service
-    @service ||= GoogleGeocoderService.new
+    @geocoder_service ||= GoogleGeocoderService.new
   end
 
   def get_location
