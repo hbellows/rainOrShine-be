@@ -5,6 +5,10 @@ class Forecast
     @location = location
   end
 
+  def image_collection
+    find_images[:photos][:photo]
+  end
+
   def current_forecast
     find_weather[:currently]
   end
