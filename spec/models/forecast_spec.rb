@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 describe Forecast do
+  user_location = 'denver,co'
+  subject { Forecast.new(user_location) }
+  
   it 'exists' do
-    subject { Forcast.new('denver,co') }
 
     expect(subject).to be_a(Forecast)
   end
