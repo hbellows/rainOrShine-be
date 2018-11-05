@@ -10,17 +10,6 @@ describe Forecast do
   end
 
   context 'Instance Methods' do
-    it 'returns #image_collection' do
-      VCR.use_cassette('image_collection') do
-        expect(subject.image_collection).to be_a(Array)
-        expect(subject.image_collection.count).to eq(10)
-        expect(subject.image_collection[0]).to have_key(:id)
-        expect(subject.image_collection[0]).to have_key(:owner)
-        expect(subject.image_collection[0]).to have_key(:server)
-        expect(subject.image_collection[0]).to have_key(:title)
-      end
-    end
-
     it 'returns #current_forecast' do
       VCR.use_cassette('current_forecast') do
         expect(subject.current_forecast).to be_a(Hash)

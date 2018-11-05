@@ -1,7 +1,7 @@
 class Api::V1::BackgroundsController < ApiController
 
   def index
-    backgrounds = Forecast.new(params[:location])
-    render json: BackgroundImagesSerializer.new(backgrounds).serialized_json
+    backgrounds = BackgroundImage.new(params[:location])
+    render json: BackgroundImageSerializer.new(backgrounds).serialized_json
   end
 end
