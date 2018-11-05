@@ -2,7 +2,7 @@ class Api::V1::UsersController < ApiController
   before_action :new_user
 
   def create
-    render json: UserSerializer.new(new_user).serialized_json, status: 201    
+    render json: UserSerializer.new(new_user).serialized_json, status: 201   
   end
 
   private
