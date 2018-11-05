@@ -5,6 +5,10 @@ class Forecast
     @location = location
   end
 
+  def image_collection
+    find_images[:photos][:photo]
+  end
+
   def current_forecast
     find_weather[:currently]
   end
@@ -26,6 +30,14 @@ class Forecast
   end
 
   private
+
+  def image_service
+    @image_service ||= FlickrImageService.new
+  end
+
+  def find_images
+    image_service.image_data(latitude, longitude)
+  end
 
   def weather_service
     @weather_service ||= DarkSkyWeatherService.new

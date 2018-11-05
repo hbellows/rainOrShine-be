@@ -6,13 +6,13 @@ class DarkSkyWeatherService
 
   private
 
-    def conn
-      Faraday.new(url: 'https://api.darksky.net') do |faraday|
-        faraday.adapter Faraday.default_adapter
-      end
+  def conn
+    Faraday.new(url: 'https://api.darksky.net') do |faraday|
+      faraday.adapter Faraday.default_adapter
     end
+  end
 
-    def get_json(url)
-      JSON.parse(conn.get(url).body, symbolize_names: true)
-    end
+  def get_json(url)
+    JSON.parse(conn.get(url).body, symbolize_names: true)
+  end
 end

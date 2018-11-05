@@ -82,6 +82,8 @@ VCR.configure do |config|
   config.cassette_library_dir = "fixtures/vcr_cassettes"
   config.hook_into :webmock
   config.filter_sensitive_data('<YOUR GOOGLE API KEY HERE>') { ENV['google_api_key'] }
+  config.filter_sensitive_data('<YOUR FLICKR API KEY HERE>') { ENV['flickr_api_key'] }
+  config.filter_sensitive_data('<YOUR DARK SKY API KEY HERE>') { ENV['dark_sky_api_key'] }
 end
 
 DatabaseCleaner.strategy = :truncation
