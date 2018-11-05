@@ -1,5 +1,15 @@
 module CoordinateHelper
 
+  def latitude
+    coordinates[:lat]
+  end
+
+  def longitude
+    coordinates[:lng]
+  end
+
+  private
+
   def geocoder_service
     @geocoder_service ||= GoogleGeocoderService.new
   end
@@ -10,13 +20,5 @@ module CoordinateHelper
 
   def coordinates
     find_location[:results][0][:geometry][:location]
-  end
-
-  def latitude
-    coordinates[:lat]
-  end
-
-  def longitude
-    coordinates[:lng]
   end
 end
