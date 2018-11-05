@@ -3,17 +3,17 @@ require 'rails_helper'
 describe 'POST request' do
   context 'guest visits api/v1/users' do
     it 'creates new account and returns api key' do
-      
+
       user_payload = {
         email: 'whatever@example.com',
         password: 'password',
         password_confirmation: 'password'
       }
-      
+
       post '/api/v1/users', params: user_payload
 
       expect(response.status).to eq(201)
-      
+
       returned_json = JSON.parse(response.body, symbolize_names: true)
 
       expect(returned_json).to be_a(Hash)
