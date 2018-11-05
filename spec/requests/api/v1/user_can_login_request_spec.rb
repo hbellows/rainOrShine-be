@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'POST request' do
+xdescribe 'POST request' do
   context 'user logs in' do
     it 'logs the user in with the provided email and password' do
 
