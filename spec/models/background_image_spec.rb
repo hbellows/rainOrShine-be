@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe BackgroundImage do
   subject { BackgroundImage.new('denver,co') }
-  
+
   it 'exists' do
     expect(subject).to be_a(BackgroundImage)
   end
