@@ -22,9 +22,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Mon, 05 Nov 2018 00:49:30 GMT
+      - Mon, 05 Nov 2018 15:10:41 GMT
       Expires:
-      - Tue, 06 Nov 2018 00:49:30 GMT
+      - Tue, 06 Nov 2018 15:10:41 GMT
       Cache-Control:
       - public, max-age=86400
       Vary:
@@ -104,5 +104,5 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Mon, 05 Nov 2018 00:49:30 GMT
+  recorded_at: Mon, 05 Nov 2018 15:10:39 GMT
 recorded_with: VCR 4.0.0
