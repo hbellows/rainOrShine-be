@@ -13,7 +13,7 @@ describe 'POST request' do
 
       expect(response.status).to eq(200)
 
-      returned_json = JSON.parseresponse.body, symbolize_names: true)
+      returned_json = JSON.parse(response.body, symbolize_names: true)
 
       expect(returned_json).to be_a(Hash)
       expect(returned_json).to have_key(:data)
