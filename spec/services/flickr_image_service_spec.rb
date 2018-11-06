@@ -17,7 +17,7 @@ describe FlickrImageService do
         expect(response).to have_key(:photos)
         expect(response[:photos]).to have_key(:photo)
         expect(response[:photos][:photo]).to be_a(Array)
-        expect(response[:photos][:photo].count).to eq(10)
+        expect(response[:photos][:photo].count).to eq(20)
         expect(response[:photos][:photo][0]).to have_key(:id)
         expect(response[:photos][:photo][0]).to have_key(:owner)
         expect(response[:photos][:photo][0]).to have_key(:server)

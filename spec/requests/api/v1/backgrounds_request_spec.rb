@@ -22,7 +22,9 @@ describe 'GET request' do
         expect(returned_backgound[:data][:attributes][:image_collection][0]).to have_key(:id)
         expect(returned_backgound[:data][:attributes][:image_collection][0]).to have_key(:owner)
         expect(returned_backgound[:data][:attributes][:image_collection][0]).to have_key(:server)
+        expect(returned_backgound[:data][:attributes][:image_collection][0]).to have_key(:farm)
         expect(returned_backgound[:data][:attributes][:image_collection][0]).to have_key(:title)
+        expect(returned_backgound[:data][:attributes][:image_collection][0]).to have_key(:ispublic)
       end
     end
   end
