@@ -24,10 +24,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry-rails'
   gem 'awesome_print'
-  gem 'shoulda-matchers'
-  gem 'database_cleaner'
   gem 'fuubar'
-  gem 'simplecov'
 end
 
 group :development do
@@ -37,6 +34,10 @@ end
 group :test do
   gem 'vcr'
   gem 'webmock'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'simplecov'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'codecov', :require => false, :group => :test
