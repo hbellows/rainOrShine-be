@@ -26,8 +26,6 @@ group :development, :test do
   gem 'awesome_print'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
-  gem 'vcr'
-  gem 'webmock'
   gem 'fuubar'
   gem 'simplecov'
 end
@@ -36,5 +34,9 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
 end
 
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

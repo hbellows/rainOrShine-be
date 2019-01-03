@@ -1,4 +1,32 @@
+# Sweater Weather
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
+![alt text](https://img.shields.io/badge/ruby-2.4.0-red.svg "Ruby")
+![alt text](https://img.shields.io/badge/rails-5.1.6-red.svg "Ruby on Rails")
+[![Build Status](https://travis-ci.org/mikecm1141/sweater_weather.svg?branch=master)](https://travis-ci.org/mikecm1141/sweater_weather)
+[![Test Coverage](https://img.shields.io/badge/coverage-100%25-green.svg)](https://codecov.io/gh/mikecm1141/sweater_weather)
+
+## Purpose
+
+This is a back-end API endpoint application that will power a separate front-end application. It retrieves current, hourly, and daily weather from the Dark Sky API, using coordinates generated from a user inputted location gathered from the Google Geocoder API. This application also has the ability to hit the Flickr photo API to display a location-based image.
+
+## System Requirements
+
+ - Ruby >= 2.4.0
+ - Rails >= 5.1.6
+ - Your own Google API key
+ - Your own Dark Sky API key
+
+## Setup
+
+1. Clone or fork this project to your local machine.
+2. Run `bundle` in the project folder.
+3. Run `figaro install` in the project folder.
+4. Add the following API keys to config/application.yml with the variable names exactly as shown:
+   - `GOOGLE_API_KEY`
+   - `DARK_SKY_API_KEY`
+5. Run `rails db:{create,migrate}` in the project folder.
+6. Run `rspec` to run the full test suite, or `rails server` to load up the application.
+
 
 # README
 
