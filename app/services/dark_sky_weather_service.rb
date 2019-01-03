@@ -1,6 +1,6 @@
 class DarkSkyWeatherService
 
-  def forecast_data(lat, lng, lang = 'en', exclude = 'minutely')
+  def find_forecast(lat, lng, lang = 'en', exclude = 'minutely')
     get_json("/forecast/#{ENV['dark_sky_api_key']}/#{lat},#{lng}?lang=#{lang}&exclude=#{exclude}")
   end
 

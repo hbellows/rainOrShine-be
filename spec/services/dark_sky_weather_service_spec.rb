@@ -9,7 +9,7 @@ describe DarkSkyWeatherService do
   context '#Instance Methods' do
     it 'returns #forecast_data' do
       VCR.use_cassette('forecast_data') do
-        response = subject.forecast_data(39.7392358, -104.990251)
+        response = subject.find_forecast(39.7392358, -104.990251)
 
         expect(response).to be_a(Hash)
         expect(response).to have_key(:currently)
