@@ -8,6 +8,6 @@ class Api::V1::ForecastController < ApiController
   private
 
   def forecast
-    @forecast ||= Forecast.new(params[:location])
+    @forecast ||= ForecastFinder.new(params[:location])
   end
 end
