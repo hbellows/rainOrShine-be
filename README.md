@@ -20,34 +20,7 @@ Requirements:
   - Retrieve forecast data from the Darksky API using the lat and long
  
 
-2. Retrieve Background Image Based on Location
-```
-GET /api/v1/backgrounds?location=denver,co
-Content-Type: application/json
-Accept: application/json
-```
-Response:
-
-  - Room for personal preference on how you structure this response.
-
-Requirements:
-
-  - Returns a random image from a collection of images.
-  - The collection of images must be limited to the city being viewed.
-  - Must use an external API to retrieve these images.
-
-Possibilities:
-
-Use Flickr:
- 
- - Returns a collection of photos for a location.
-(Feel free to tweak this call but this is a good base: lat, lon, api_key, method, format, nojsoncallback, and extras=url_o)
-
-Stretch goal:
-
-  - Write a rake task that caches photos for the 50 largest U.S. cities to improve page load times (this should be a separate user story)
-
-3. Account Creation
+2. Account Creation
 ```
 POST /api/v1/users
 Content-Type: application/json
@@ -71,7 +44,7 @@ body:
 }
 ```
 
-4. Login
+3. Login
 ```
 POST /api/v1/sessions
 Content-Type: application/json
@@ -94,7 +67,7 @@ body:
 }
 ```
 
-5. Favoriting Locations
+4. Favoriting Locations
 ```
 POST /api/v1/favorites
 Content-Type: application/json
@@ -112,7 +85,7 @@ Requirements:
   - API key must be sent
   - If no API key or an incorrect key is provided return 401 (Unauthorized)
   
-6. Listing Favorite Locations
+5. Listing Favorite Locations
 ```
 GET /api/v1/favorites
 Content-Type: application/json
