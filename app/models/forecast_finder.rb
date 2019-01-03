@@ -1,4 +1,4 @@
-class Forecast
+class ForecastFinder
   include CoordinateHelper
   
   attr_reader :location
