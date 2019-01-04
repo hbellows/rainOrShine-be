@@ -5,9 +5,9 @@ include CoordinateFinder
     @location = location
   end
 
-  def giphy_forecast_builder
-    eight_day_forecast.map do |day|
-      GiphyForecast.new({day[:time], day[:summary], giphy_data(day[:icon])})
+  def daily_forecasts
+    eight_day_forecast.each_with_object([]) do |day, data|
+      data << GiphyForecast.new({day[:time], day[:summary], giphy_data(day[:icon])})
     end
   end
 
