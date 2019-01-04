@@ -9,6 +9,7 @@ class ForecastFinder
 
   def current_forecast
     weather_data[:currently]
+    binding.pry
   end
 
   def daily_forecast_summary
