@@ -1,13 +1,25 @@
 class GiphyFinder
 include CoordinateFinder
 
+  attr_reader :location
+
   def initialize(location)
     @location = location
   end
 
-  def daily_forecasts
+  def giphy_forecast_json
+    {
+      data: {
+        daily_forecasts: forecast_gifs
+      },
+      copyright: "2018"
+    }
+    
+  end
+
+  def forecast_gifs
     eight_day_forecast.each_with_object([]) do |day, data|
-      data << GiphyForecast.new({day[:time], day[:summary], giphy_data(day[:icon])})
+      data << GiphyForecast.new({day[:time] day[:summary] giphy_data(day[:icon])})
     end
   end
 
