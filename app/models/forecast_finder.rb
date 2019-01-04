@@ -3,13 +3,16 @@ class ForecastFinder
   
   attr_reader :location
 
+  # rails c
+  # gifs = Gifs.new('denver,co')
+  # gifs.image_data
+
   def initialize(location)
     @location = location
   end
 
   def current_forecast
-    weather_data[:currently]
-    binding.pry
+    Forecast.new(weather_data[:currently])
   end
 
   def daily_forecast_summary
