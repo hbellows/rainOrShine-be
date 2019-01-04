@@ -1,7 +1,7 @@
 class GiphyForecast
-  attr_reader :data
+  attr_reader :forecast
 
   def initialize(data)
-    @data = data
+    @forecast = data
   end
 end
