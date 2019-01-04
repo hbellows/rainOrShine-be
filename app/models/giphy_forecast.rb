@@ -1,10 +1,7 @@
 class GiphyForecast
-  attr_reader :time, :summary, :url
+  attr_reader :data
 
   def initialize(data)
-    binding.pry
-    @time = data[:time]
-    @summary = data[:summary]
-    @url = data[:url]
+    @data = data
   end
 end

@@ -19,7 +19,7 @@ include CoordinateFinder
 
   def forecast_gifs
     eight_day_forecast.each_with_object([]) do |day, data|
-      data << GiphyForecast.new({day[:time] day[:summary] giphy_data(day[:icon])})
+      data << GiphyForecast.new({time: day[:time], summary: day[:summary] , url: giphy_data(day[:icon])}).data
     end
   end
 
