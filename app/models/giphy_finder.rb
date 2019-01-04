@@ -7,19 +7,18 @@ include CoordinateFinder
     @location = location
   end
 
-  def giphy_forecast_json
+  def giphy_forecast
     {
       data: {
         daily_forecasts: forecast_gifs
       },
       copyright: "2018"
     }
-    
   end
 
   def forecast_gifs
     eight_day_forecast.each_with_object([]) do |day, data|
-      data << GiphyForecast.new({time: day[:time], summary: day[:summary] , url: giphy_data(day[:icon])}).data
+      data << GiphyForecast.new({time: day[:time], summary: day[:summary] , url: giphy_data(day[:icon])}).forecast
     end
   end
 
