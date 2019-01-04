@@ -5,13 +5,15 @@ include CoordinateFinder
     @location = location
   end
 
-  # def method_name
-    
-  # end
+  def giphy_forecast_builder
+    eight_day_forecast.map do |day|
+      GiphyForecast.new({day[:time], day[:summary], giphy_data(day[:icon])})
+    end
+  end
 
   private
 
-  def daily_forecast
+  def eight_day_forecast
     weather_data[:daily][:data]
   end
 
@@ -23,8 +25,8 @@ include CoordinateFinder
     weather_service.find_forecast(latitude, longitude)
   end
 
-  def giphy_data
-    giphy_service.find_gifs(key_word)
+  def giphy_data(key_word)
+    giphy_service.find_gifs(key_word)[:data][0][:url]
   end
 
   def giphy_service
