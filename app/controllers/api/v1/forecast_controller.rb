@@ -1,5 +1,5 @@
 class Api::V1::ForecastController < ApiController
-  # before_action :forecast
+  before_action :forecast
 
   def show
     render json: ForecastSerializer.new(forecast).serialized_json
