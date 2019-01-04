@@ -5,7 +5,9 @@ include CoordinateFinder
     @location = location
   end
 
-
+  # def method_name
+    
+  # end
 
   private
 
