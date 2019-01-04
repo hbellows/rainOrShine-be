@@ -1,4 +1,4 @@
-class Api::V1::ForecastController < ApiController
+class Api::V1::GifsController < ApiController
 
   def index
     render json: GiphySerializer.new(gifs)
