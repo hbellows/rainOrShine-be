@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe DarkSkyWeatherService do
 
   subject { DarkSkyWeatherService.new }
