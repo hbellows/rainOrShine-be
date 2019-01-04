@@ -10,13 +10,15 @@ describe 'Gifs Endpoint' do
         expect(response.status).to eq(200)
 
         returned_json = JSON.parse(response.body, symbolize_names: true)
-        expect(returned_forecast).to be_a(Hash)
-        expect(returned_forecast).to have_key(:data)
-        expect(returned_forecast[:data]).to have_key(:id)
-        expect(returned_forecast[:data][:id]).to eq(user_location)
-        expect(returned_forecast[:data]).to have_key(:type)
-        expect(returned_forecast[:data][:type]).to eq('gifs')
-        expect(returned_forecast[:data]).to have_key(:attributes)
+        # binding.pry
+        expect(returned_json).to be_a(Hash)
+        expect(returned_json[:data][:attributes][:giphy_forecast]).to have_key(:data)
+        expect(returned_json[:data][:attributes][:giphy_forecast][:data]).to have_key(:daily_forecasts)
+        expect(returned_json[:data][:attributes][:giphy_forecast][:data][:daily_forecasts]).to be_a(Array)
+        expect(returned_json[:data][:attributes][:giphy_forecast][:data][:daily_forecasts][0]).to have_key(:time)
+        expect(returned_json[:data][:attributes][:giphy_forecast][:data][:daily_forecasts][0]).to have_key(:summary)
+        expect(returned_json[:data][:attributes][:giphy_forecast][:data][:daily_forecasts][0]).to have_key(:url)
+        expect(returned_json[:data][:attributes][:giphy_forecast]).to have_key(:copyright)
       end
     end
   end
