@@ -10,8 +10,15 @@ describe 'Gifs Endpoint' do
         expect(response.status).to eq(200)
 
         returned_json = JSON.parse(response.body, symbolize_names: true)
-        # binding.pry
+
         expect(returned_json).to be_a(Hash)
+        expect(returned_json).to have_key(:data) 
+        expect(returned_json[:data]).to have_key(:id)
+        expect(returned_json[:data][:id]).to eq(user_location)
+        expect(returned_json[:data]).to have_key(:type)
+        expect(returned_json[:data][:type]).to eq('giphy')
+        expect(returned_json[:data]).to have_key(:attributes)
+        expect(returned_json[:data][:attributes]).to have_key(:giphy_forecast)
         expect(returned_json[:data][:attributes][:giphy_forecast]).to have_key(:data)
         expect(returned_json[:data][:attributes][:giphy_forecast][:data]).to have_key(:daily_forecasts)
         expect(returned_json[:data][:attributes][:giphy_forecast][:data][:daily_forecasts]).to be_a(Array)
