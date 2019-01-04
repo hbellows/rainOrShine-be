@@ -6,7 +6,7 @@ class Api::V1::GifsController < ApiController
 
   private
   def gifs
-    @gifs ||= GiphyFinder.new(param[:location])
+    @gifs ||= GiphyFinder.new(params[:location])
   end
 
 end
