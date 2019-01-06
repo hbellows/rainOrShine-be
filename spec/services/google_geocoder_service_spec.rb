@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe GoogleGeocoderService do
 
   subject { GoogleGeocoderService.new }

@@ -1,5 +1,5 @@
 class ForecastFinder
-  include CoordinateHelper
+  include CoordinateFinder
   
   attr_reader :location
 

@@ -1,4 +1,4 @@
-module CoordinateHelper
+module CoordinateFinder
 
   def latitude
     coordinates[:lat]

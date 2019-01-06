@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'GET request' do
-  context 'guest visits /api/v1/forecasts' do
+describe 'guest visits /api/v1/forecasts' do
+  context 'GET request' do
     it 'it returns a forecast for a specific location' do
       VCR.use_cassette('get_forecast') do
         user_location = 'denver,co'
