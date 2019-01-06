@@ -1,9 +1,10 @@
 # Sweater Weather
+<!-- ![alt text](https://img.shields.io/badge/ruby-2.4.0-red.svg "Ruby")
+![alt text](https://img.shields.io/badge/rails-5.1.6-red.svg "Ruby on Rails") -->
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
-![alt text](https://img.shields.io/badge/ruby-2.4.0-red.svg "Ruby")
-![alt text](https://img.shields.io/badge/rails-5.1.6-red.svg "Ruby on Rails")
 [![Build Status](https://travis-ci.org/hbellows/rain_or_shine.svg?branch=master)](https://travis-ci.org/hbellows/rain_or_shine)
-[![Test Coverage](https://img.shields.io/badge/coverage-100%25-green.svg)](https://codecov.io/gh/hbellows/rain_or_shine)
+[![codecov.io](https://codecov.io/gh/hbellows/rain_or_shine/branch/master/graph/badge.svg)](https://codecov.io/gh/hbellows/rain_or_shine)
+
 
 ## Purpose
 
