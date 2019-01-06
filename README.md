@@ -8,7 +8,7 @@
 
 ## Purpose
 
-This is a back-end API endpoint application that will power a separate front-end application. It retrieves current, hourly, and daily weather from the Dark Sky API, using coordinates generated from a user inputted location gathered from the Google Geocoder API. This application also has the ability to hit the Flickr photo API to display a location-based image.
+This is a back-end API endpoint application that will power a separate front-end application. It retrieves current, hourly, and daily weather from the Dark Sky API, using coordinates generated from a user inputted location gathered from the Google Geocoder API. This application also has the ability to hit the Giphy search API to display location-based gifs.
 
 ## System Requirements
 
@@ -25,6 +25,7 @@ This is a back-end API endpoint application that will power a separate front-end
 4. Add the following API keys to config/application.yml with the variable names exactly as shown:
    - `GOOGLE_API_KEY`
    - `DARK_SKY_API_KEY`
+   - `GIPHY_API_KEY`
 5. Run `rails db:{create,migrate}` in the project folder.
 6. Run `rspec` to run the full test suite, or `rails server` to load up the application.
 
