@@ -3,10 +3,6 @@ class ForecastFinder
   
   attr_reader :location
 
-  # rails c
-  # gifs = Gifs.new('denver,co')
-  # gifs.image_data
-
   def initialize(location)
     @location = location
   end
