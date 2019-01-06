@@ -1,5 +1,5 @@
 class ForecastFinder
-  include CoordinateHelper
+  include CoordinateFinder
   
   attr_reader :location
 
@@ -12,7 +12,7 @@ class ForecastFinder
   end
 
   def current_forecast
-    Forecast.new(weather_data[:currently])
+    weather_data[:currently]
   end
 
   def daily_forecast_summary
