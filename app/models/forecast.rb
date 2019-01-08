@@ -3,11 +3,11 @@ class Forecast
 
   def initialize(data)
     binding.pry
-    @time = data[:time]
+    @time = Time.at(data[:time]).strftime('%I:%M')
     @summary = data[:summary]
     @icon = data[:icon]
     @temp = data[:temperature]
-    # @feels_like = data[:]
+    @feels_like = data[:apparentTemperature]
     @humidity = data[:humidity]
     @uv_index = data[:uvIndex]
   end

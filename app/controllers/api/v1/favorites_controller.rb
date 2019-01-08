@@ -1,8 +1,9 @@
 class Api::V1::FavoritesController < ApiController
-  before_action :find_user, :validate_api_key
+  before_action :validate_api_key
   before_action :validate_location, only: %i[create destroy]
   before_action :favorite, only: :create
   before_action :remove_favorite, only: :destroy
+  helper_method :user
   
   def index
     render json: FavoritesSerializer.new(user.favorites), status: 200
@@ -17,15 +18,13 @@ class Api::V1::FavoritesController < ApiController
   end
 
   private
-  
-  attr_reader :user
+
+  def user
+    @user ||= User.find_by_api_key(favorite_params[:api_key])
+  end
 
   def favorite_params
     params.permit(:location, :api_key)
-  end
-
-  def find_user
-    @user ||= User.find_by_api_key(favorite_params[:api_key])
   end
 
   def validate_api_key

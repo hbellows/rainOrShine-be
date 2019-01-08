@@ -1,12 +1,16 @@
 class Api::V1::UsersController < ApiController
-  helper_method :new_user, :save_user
   before_action :validate_creation
+  helper_method :new_user, :save_user
 
   def create
     render json: UserSerializer.new(new_user), status: 201
   end
 
   private
+
+  def user
+    @user ||= User.find(params[:id])
+  end
 
   def new_user
     @new_user ||= User.new(user_params)
