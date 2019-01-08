@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :password, presence: true
   # validates_confirmation_of :password, on: :create
 
-  # has_many :favorites
+  has_many :favorites
 
   after_save :generate_api_key
 
