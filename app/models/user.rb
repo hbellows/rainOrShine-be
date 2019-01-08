@@ -5,15 +5,15 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
-  # validates_confirmation_of :password, on: :create
+  validates_confirmation_of :password, on: :create
 
   has_many :favorites
 
   after_save :generate_api_key
 
-  # def remove_favorite_location(location)
-  #   favorites.find_by_location(location).destroy
-  # end
+  def remove_favorite_location(location)
+    favorites.find_by_location(location).destroy
+  end
 
   private
 

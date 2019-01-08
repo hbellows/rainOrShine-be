@@ -16,8 +16,11 @@ ActiveRecord::Schema.define(version: 2019_01_08_033034) do
   enable_extension "plpgsql"
 
   create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -26,4 +29,5 @@ ActiveRecord::Schema.define(version: 2019_01_08_033034) do
     t.string "api_key"
   end
 
+  add_foreign_key "favorites", "users"
 end
