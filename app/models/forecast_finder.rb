@@ -4,7 +4,7 @@ class ForecastFinder
   attr_reader :location
 
   def initialize(location)
-    @location = location
+    @location = location.strip.downcase
   end
 
   def current_forecast
