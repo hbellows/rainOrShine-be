@@ -3,13 +3,13 @@ class Api::V1::FavoritesController < ApiController
   before_action :validate_location, only: %i[create destroy]
   before_action :favorite, only: :create
   before_action :remove_favorite, only: :destroy
+  
+    def index
+      render json: FavoritesSerializer.new(user.favorites), status: 200
+    end
 
   def create
     render json: FavoriteSerializer.new(favorite), status: 201
-  end
-
-  def index
-    render json: FavoritesSerializer.new(user.favorites), status: 200
   end
 
   def destroy
