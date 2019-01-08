@@ -8,10 +8,6 @@ class Api::V1::UsersController < ApiController
 
   private
 
-  def user
-    @user ||= User.find(params[:id])
-  end
-
   def new_user
     @new_user ||= User.new(user_params)
   end
