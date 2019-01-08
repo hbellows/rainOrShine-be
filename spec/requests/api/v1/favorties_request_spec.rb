@@ -73,12 +73,12 @@ describe 'User gets a list of favorite cities' do
         expect(result[:data][0][:meta]).to have_key(:data)
         expect(result[:data][0][:meta][:data]).to have_key(:id)
         expect(result[:data][0][:meta][:data]).to have_key(:attributes)
-        expect(result[:data][0][:meta][:data][:attributes]).to have_key(:currently)
+        expect(result[:data][0][:meta][:data][:attributes]).to have_key(:current_forecast)
         expect(result[:data][1]).to have_key(:meta)
         expect(result[:data][1][:meta]).to have_key(:data)
         expect(result[:data][1][:meta][:data]).to have_key(:id)
         expect(result[:data][1][:meta][:data]).to have_key(:attributes)
-        expect(result[:data][1][:meta][:data][:attributes]).to have_key(:currently)
+        expect(result[:data][1][:meta][:data][:attributes]).to have_key(:current_forecast)
       end
     end
 
@@ -123,7 +123,7 @@ describe 'User deletes a favorite location' do
         expect(result[:data][0][:meta]).to have_key(:data)
         expect(result[:data][0][:meta][:data]).to have_key(:id)
         expect(result[:data][0][:meta][:data]).to have_key(:attributes)
-        expect(result[:data][0][:meta][:data][:attributes]).to have_key(:currently)
+        expect(result[:data][0][:meta][:data][:attributes]).to have_key(:current_forecast)
       end
     end
 

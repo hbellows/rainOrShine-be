@@ -3,7 +3,7 @@ class FavoritesSerializer
   attributes 
 
   meta do |favorite|
-    weather = WeatherResult.new(favorite.location)
-    WeatherFavoriteSerializer.new(weather)
+    weather = ForecastFinder.new(favorite.location)
+    FavoriteWeatherLocationSerializer.new(weather)
   end
 end
