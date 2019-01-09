@@ -64,6 +64,7 @@ describe 'User gets a list of favorite cities' do
         get '/api/v1/favorites', params: payload
 
         result = JSON.parse(response.body, symbolize_names: true)
+        binding.pry
 
         expect(response).to be_successful
         expect(result).to have_key(:data)
