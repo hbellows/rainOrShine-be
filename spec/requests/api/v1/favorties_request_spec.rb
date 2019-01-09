@@ -113,17 +113,19 @@ describe 'User deletes a favorite location' do
 
         delete '/api/v1/favorites', params: payload
 
-        returned_fave = JSON.parse(response.body, symbolize_names: true)
+        expect(response.status).to eq(204)
 
-        expect(response).to be_successful
-        expect(returned_fave).to have_key(:data)
-        expect(returned_fave[:data]).to be_a(Array)
-        expect(returned_fave[:data].size).to eq(1)
-        expect(returned_fave[:data][0]).to have_key(:meta)
-        expect(returned_fave[:data][0][:meta]).to have_key(:data)
-        expect(returned_fave[:data][0][:meta][:data]).to have_key(:id)
-        expect(returned_fave[:data][0][:meta][:data]).to have_key(:attributes)
-        expect(returned_fave[:data][0][:meta][:data][:attributes]).to have_key(:current_forecast)
+        # returned_fave = JSON.parse(response.body, symbolize_names: true)
+
+        # expect(response).to be_successful
+        # expect(returned_fave).to have_key(:data)
+        # expect(returned_fave[:data]).to be_a(Array)
+        # expect(returned_fave[:data].size).to eq(1)
+        # expect(returned_fave[:data][0]).to have_key(:meta)
+        # expect(returned_fave[:data][0][:meta]).to have_key(:data)
+        # expect(returned_fave[:data][0][:meta][:data]).to have_key(:id)
+        # expect(returned_fave[:data][0][:meta][:data]).to have_key(:attributes)
+        # expect(returned_fave[:data][0][:meta][:data][:attributes]).to have_key(:current_forecast)
       end
     end
 
