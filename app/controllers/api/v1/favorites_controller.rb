@@ -1,6 +1,6 @@
 class Api::V1::FavoritesController < ApiController
   before_action :validate_api_key
-  before_action :validate_location, only: %i[create destroy]
+  before_action :validate_location, only: [:create, :destroy]
   before_action :favorite, only: :create
   before_action :remove_favorite, only: :destroy
   helper_method :user

@@ -17,7 +17,7 @@ class Api::V1::UsersController < ApiController
   end
 
   def validate_creation
-    render json: FailedRegistrationSerializer.new(new_user), status: 403, message: 'Unable to register new user.' unless save_user
+    render json: { message: 'Unable to register new user.', status: 403} unless save_user
   end
 
   def user_params
