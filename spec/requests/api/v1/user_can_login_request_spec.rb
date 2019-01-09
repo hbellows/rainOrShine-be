@@ -11,10 +11,10 @@ describe 'User logs in' do
       }
 
       post '/api/v1/sessions', params: payload
-      result = JSON.parse(response.body, symbolize_names: true)
+      returned_json = JSON.parse(response.body, symbolize_names: true)
 
       expect(response.status).to eq(200)
-      expect(result[:data][:attributes][:api_key]).to eq(user.api_key)
+      expect(returned_json[:data][:attributes][:api_key]).to eq(user.api_key)
     end
 
     it 'returns 404 if user does not exist or bad password' do
@@ -26,7 +26,7 @@ describe 'User logs in' do
       }
 
       post '/api/v1/sessions', params: payload
-      result = JSON.parse(response.body, symbolize_names: true)
+      returned_json = JSON.parse(response.body, symbolize_names: true)
 
       expect(response.status).to eq(403)
     end
