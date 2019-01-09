@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'User logs in' do
-  context 'via POST /api/v1/sessions' do
+  context 'POST /api/v1/sessions' do
     it 'logs in user to retrieve API key' do
       user = create(:user)
 

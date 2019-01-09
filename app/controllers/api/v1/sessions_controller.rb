@@ -1,8 +1,9 @@
 class Api::V1::SessionsController < ApiController
-  before_action :find_user, :validate_user
+  before_action :validate_user
+  helper_method :user
 
   def create
-    render json: UserSerializer.new(find_user), status: 200
+    render json: UserSerializer.new(user), status: 200
   end
 
   private
@@ -11,15 +12,15 @@ class Api::V1::SessionsController < ApiController
     params.permit(:email, :password)
   end
 
-  def find_user
-    @find_user ||= User.find_by_email(session_params[:email])
+  def user
+    @user ||= User.find_by_email(session_params[:email])
   end
 
   def valid_password?
-    find_user.authenticate(session_params[:password])
+    user.authenticate(session_params[:password])
   end
 
   def validate_user
-    render json: nil, status: 403 unless find_user && valid_password?
+    render json: nil, status: 403 unless user && valid_password?
   end
 end
