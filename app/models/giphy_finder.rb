@@ -37,7 +37,7 @@ include CoordinateFinder
   end
 
   def giphy_data(key_word)
-    giphy_service.find_gifs(key_word)[:data][0][:url]
+    giphy_service.find_gifs(key_word)[:data][0][:images][:downsized_large][:url]
   end
 
   def giphy_service
