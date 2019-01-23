@@ -17,10 +17,6 @@ class Api::V1::FavoritesController < ApiController
     render json: nil, status: 204
   end
 
-  # def destroy
-  #   render json: FavoritesSerializer.new(user.favorites), status: 200
-  # end
-
   private
 
   def user
