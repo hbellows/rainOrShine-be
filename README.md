@@ -16,6 +16,8 @@ This is a back-end API endpoint application that will power a separate front-end
  - Rails >= 5.1.6
  - Your own Google API key
  - Your own Dark Sky API key
+ - Your own Giphy API key
+ - Please see the following section for instructions on handling personal api keys.
 
 ## Setup
 
@@ -197,3 +199,12 @@ body:
 #### Wireframe
 
 ![Screenshot](Wireframe.png)
+
+
+#### How to Contribute
+
+If you are so inclinded to help me make this project better, please fork a copy of this repo and submit a pull request! 
+
+#### Contributors
+
+Currently, I am the sole contributor to this project (with a helping hand from my husband Mike Heft!).
