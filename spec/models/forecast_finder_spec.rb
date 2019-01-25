@@ -12,6 +12,7 @@ describe ForecastFinder do
   context 'Instance Methods' do
     it 'returns #current_forecast' do
       VCR.use_cassette('current_forecast') do
+        binding.pry
         expect(subject.current_forecast.time).to be_a(String)
         expect(subject.current_forecast.summary).to be_a(String)
         expect(subject.current_forecast.icon).to be_a(String)
