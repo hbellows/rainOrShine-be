@@ -11,9 +11,9 @@ class ForecastFinder
     Forecast.new(weather_data[:currently])
   end
 
-  def daily_forecast_summary
-    weather_data[:daily]
-  end
+  # def daily_forecast_summary
+  #   weather_data[:daily]
+  # end
 
   def daily_forecast
     weather_data[:daily][:data].map do |forecast_data|
@@ -21,9 +21,9 @@ class ForecastFinder
     end
   end
 
-  def hourly_forecast_summary
-    weather_data[:hourly]
-  end
+  # def hourly_forecast_summary
+  #   weather_data[:hourly]
+  # end
 
   def hourly_forecast
     weather_data[:hourly][:data].map do |forecast_data|
