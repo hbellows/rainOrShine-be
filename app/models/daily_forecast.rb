@@ -12,10 +12,10 @@ class DailyForecast
               :uv_index
 
   def initialize(data)
-    @day = Time.at(data[:time]).strftime('%A')
-    @time = Time.at(data[:time]).strftime('%I:%M %p')
-    @sunrise = Time.at(data[:sunriseTime]).strftime('%I:%M %p')
-    @sunset = Time.at(data[:sunsetTime]).strftime('%I:%M %p')
+    @day = Time.local(data[:time]).strftime('%A')
+    @time = Time.local(data[:time]).strftime('%I:%M %p')
+    @sunrise = Time.local(data[:sunriseTime]).strftime('%I:%M %p')
+    @sunset = Time.local(data[:sunsetTime]).strftime('%I:%M %p')
     @summary = data[:summary]
     @icon = data[:icon]
     @high = data[:temperatureHigh].round
