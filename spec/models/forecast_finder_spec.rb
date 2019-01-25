@@ -17,7 +17,7 @@ describe ForecastFinder do
         expect(subject.current_forecast.icon).to be_a(String)
         expect(subject.current_forecast.temp).to be_a(Integer)
         expect(subject.current_forecast.feels_like).to be_a(Integer)
-        expect(subject.current_forecast.humidity).to be_a(Float)
+        expect(subject.current_forecast.humidity).to be_a(Integer)
         expect(subject.current_forecast.uv_index).to be_a(Integer)
       end
     end
@@ -40,7 +40,7 @@ describe ForecastFinder do
         expect(subject.daily_forecast[0].icon).to be_a(String)
         expect(subject.daily_forecast[0].high).to be_a(Integer)
         expect(subject.daily_forecast[0].low).to be_a(Integer)
-        expect(subject.daily_forecast[0].humidity).to be_a(Float)
+        expect(subject.daily_forecast[0].humidity).to be_a(Integer)
         expect(subject.daily_forecast[0].precip_type).to be_a(String)
         expect(subject.daily_forecast[0].uv_index).to be_a(Integer)
       end
@@ -62,7 +62,7 @@ describe ForecastFinder do
         expect(subject.hourly_forecast[0].icon).to be_a(String)
         expect(subject.hourly_forecast[0].temp).to be_a(Integer)
         expect(subject.hourly_forecast[0].feels_like).to be_a(Integer)
-        expect(subject.hourly_forecast[0].humidity).to be_a(Float)
+        expect(subject.hourly_forecast[0].humidity).to be_a(Integer)
         expect(subject.hourly_forecast[0].uv_index).to be_a(Integer)
       end
     end
