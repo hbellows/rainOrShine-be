@@ -17,7 +17,7 @@ class ForecastFinder
 
   def daily_forecast
     weather_data[:daily][:data].map do |forecast_data|
-      Forecast.new(forecast_data)
+      DailyForecast.new(forecast_data)
     end
   end
 
