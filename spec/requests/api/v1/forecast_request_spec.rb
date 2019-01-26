@@ -19,9 +19,7 @@ describe 'guest visits /api/v1/forecasts' do
         expect(returned_forecast[:data][:type]).to eq('forecast')
         expect(returned_forecast[:data]).to have_key(:attributes)
         expect(returned_forecast[:data][:attributes]).to have_key(:current_forecast)
-        expect(returned_forecast[:data][:attributes]).to have_key(:daily_forecast_summary)
         expect(returned_forecast[:data][:attributes]).to have_key(:daily_forecast)
-        expect(returned_forecast[:data][:attributes]).to have_key(:hourly_forecast_summary)
         expect(returned_forecast[:data][:attributes]).to have_key(:hourly_forecast)
       end
     end
