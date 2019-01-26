@@ -22,15 +22,6 @@ describe ForecastFinder do
       end
     end
 
-    it 'returns #daily_forecast_summary' do
-      VCR.use_cassette('daily_forecast_summary') do
-        expect(subject.daily_forecast_summary).to be_a(Hash)
-        expect(subject.daily_forecast_summary).to have_key(:summary)
-        expect(subject.daily_forecast_summary).to have_key(:icon)
-        expect(subject.daily_forecast_summary).to have_key(:data)
-      end
-    end
-
     it 'returns #daily_forecast' do
       VCR.use_cassette('daily_forecast') do
         expect(subject.daily_forecast[0].time).to be_a(String)
@@ -43,15 +34,6 @@ describe ForecastFinder do
         expect(subject.daily_forecast[0].humidity).to be_a(Integer)
         expect(subject.daily_forecast[0].precip_type).to be_a(String)
         expect(subject.daily_forecast[0].uv_index).to be_a(Integer)
-      end
-    end
-
-    it 'returns #hourly_forecast_summary' do
-      VCR.use_cassette('hourly_forecast_summary') do
-        expect(subject.hourly_forecast_summary).to be_a(Hash)
-        expect(subject.hourly_forecast_summary).to have_key(:summary)
-        expect(subject.hourly_forecast_summary).to have_key(:icon)
-        expect(subject.hourly_forecast_summary).to have_key(:data)
       end
     end
 
