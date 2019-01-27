@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 test_user = User.create!(email: 'me@you.com', password: 'password', api_key: 'abc123')
-test_user.favorites.create!(location: 'reno,nv')
+fav_1 = test_user.favorites.create!(location: 'reno,nv')
+fav_2 = test_user.favorites.create!(location: 'sanfransico,ca')
