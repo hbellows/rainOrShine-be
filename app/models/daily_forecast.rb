@@ -6,7 +6,8 @@ class DailyForecast
               :summary, 
               :icon, 
               :high, 
-              :low, 
+              :low,
+              :precip_prob, 
               :precip_type, 
               :humidity, 
               :uv_index
@@ -20,6 +21,7 @@ class DailyForecast
     @icon = data[:icon]
     @high = data[:temperatureHigh].round
     @low = data[:temperatureLow].round
+    @precip_prob = (data[:precipProbability] * 100).round
     @precip_type = data[:precipType]
     @humidity = (data[:humidity] * 100).round
     @uv_index = data[:uvIndex]
